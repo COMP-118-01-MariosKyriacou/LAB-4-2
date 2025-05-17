@@ -9,5 +9,23 @@
  */
 
 #include <iostream>
+#include <iomanip>
+#include <cassert>
+#include "Shapes.h"
 
 using namespace std;
+
+/**
+  * Loop from 0 to the desired length and output the character in one straight line. Once it ends add a new line
+  * @param length The length variable is the desired length of the line that the user wants to output
+  * @param ch The ch variable is the desired character that they want the shape to have
+ */
+void drawHorizontalLine(const int length, const char ch) {
+    assert(length > 0);
+    
+    for(int i = 0; i < length; i++) {
+        cout << ch;
+    }
+    
+    cout << endl;
+}
