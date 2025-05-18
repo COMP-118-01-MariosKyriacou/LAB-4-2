@@ -102,3 +102,17 @@ double maximumValue(const double matrix[][Globals::MAX_COL], const int maxRow) {
     
     return tempMax;
 }
+
+/**
+ * In this function, we transpose the matrix that has been provided and return the value into the transposed 2d array
+ * @param matrix Initial 2d array
+ * @param transposed Variable where transposed matrix will be stored
+ * @param maxRow A constant variable of the maximum amount of rows in the array
+ */
+void transposedMatrix(const double matrix[][Globals::MAX_COL], double transposed[][Globals::MAX_COL], const int maxRow) {
+    for(int i = 0; i < maxRow; i++) {
+        for(int j = 0; j < Globals::MAX_COL; j++) {
+            transposed[j][i] = matrix[i][j];
+        }
+    }
+}
