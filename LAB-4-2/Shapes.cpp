@@ -228,3 +228,27 @@ void drawShapes(const int numShapes) {
         }
     }
 }
+
+/**
+ * This function will initialize the arrays with random values
+ * @param shapeTy The shapeTy generates a random value from 1-6, arrSize number of times, to indicate which shape type to print
+ * @param shapeLen The shapeLen variable generates a random value from 1-20, arrSize number of times, to see the length of the shape
+ * @param shapeCh The shapeCh variable generates a random value (ASCII) from 33-126, arrSize number of times, in order to show it as the character of the shape
+ * @param arrSize The arrSize variable is a random value between 1-10 that will be the amount of values that will be generated for the arrays
+*/
+void initializeArrays(int shapeTy[], int shapeLen[], char shapeCh[], const int arrSize) {
+    assert(arrSize >= 1 && arrSize <= 10);
+    
+    for(int i = 0; i < arrSize; i++) {
+        shapeTy[i] = rand() % 6 + 1;
+        assert(shapeTy[i] >= 1 && shapeTy[i] <= 6);
+        
+        shapeLen[i] = rand() % 20 + 1;
+        assert(shapeLen[i] >= 1 && shapeLen[i] <= 20);
+        
+        shapeCh[i] = (char)(33 + (rand() % 94));
+        assert(shapeCh[i] >= 33 && shapeCh[i] <= 126);
+    }
+    
+    drawArrays(shapeTy, shapeLen, shapeCh, arrSize);
+}
