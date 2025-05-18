@@ -185,3 +185,46 @@ bool dataValidation(const int num1, const int num2) {
     
     return false;
 }
+
+/**
+  * Generate random numbers and get a random shape with a random width (and height), with a random character, numShapes number of times. For each shapeType call the correct function using a switch statement.
+  * @param numShapes The numShapes variable is the amount of random shapes that gets generated in the main function
+ */
+void drawShapes(const int numShapes) {
+    assert(numShapes > 0 && numShapes <= 10);
+    
+    // ShapeType: Generate a number from 0 to 5 and add 1 (so range will become 1-6)
+    // ShapeLength && ShapeHeight: Have an offset of 5 and generate a random number between 0-15. Range will become 5-20
+    // ShapeCharacter: Have an offset of 33 and generate a random number between 0 and 93
+    
+    for(int i = 0; i < numShapes; i++) {
+        int shapeType = rand() % 6 + 1, shapeLength = 5 + ( rand() % 16 ), shapeHeight = 5 + ( rand() % 16 ), shapeCharacter = 33 + ( rand() % 94 );
+        
+        switch(shapeType) {
+            case 1:
+                drawHorizontalLine(shapeLength, shapeCharacter);
+                
+                break;
+            case 2:
+                drawVerticalLine(shapeLength, shapeCharacter);
+                
+                break;
+            case 3:
+                drawSquareFilled(shapeLength, shapeCharacter);
+                
+                break;
+            case 4:
+                drawSquare(shapeLength, shapeCharacter, true);
+                
+                break;
+            case 5:
+                drawRectangle(shapeHeight, shapeLength, shapeCharacter, true);
+                
+                break;
+            default:
+                drawRectangleFilled(shapeHeight, shapeLength, shapeCharacter);
+                
+                break;
+        }
+    }
+}
