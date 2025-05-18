@@ -116,3 +116,21 @@ void transposedMatrix(const double matrix[][Globals::MAX_COL], double transposed
         }
     }
 }
+
+/**
+ * In this function, we add up all of the elements of the matrix and then find the average
+ * @param matrix A constant variable of the matrix
+ * @param maxRow A constant variable of the maximum amount of rows in the array
+ * @return Returns the average of all the elements backed up
+ */
+double averageOfElements(const double matrix[][Globals::MAX_COL], const int maxRow) {
+    double total = 0;
+    
+    for(int i = 0; i < maxRow; i++) {
+        for(int j = 0; j < Globals::MAX_COL; j++) {
+            total += matrix[i][j];
+        }
+    }
+    
+    return total / (maxRow * Globals::MAX_COL);
+}
