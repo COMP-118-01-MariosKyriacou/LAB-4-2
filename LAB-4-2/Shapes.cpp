@@ -89,3 +89,21 @@ void drawSquare(const int size, const char ch, const bool filled){
         cout << endl;
     }
 }
+
+/**
+  * Draw a filled square on the users screen
+  * @param size The size variable is both the width and height of the square
+  * @param ch The ch variable is the desired character that they want the shape to have
+ */
+void drawSquareFilled(const int size, const char ch){
+    assert(size > 0);
+    
+    for(int i = 0; i < size; i++) {
+        for(int j = 0; j < size; j++) {
+            cout << ch;
+        }
+        cout << endl;
+    }
+    
+    cout << endl;
+}
