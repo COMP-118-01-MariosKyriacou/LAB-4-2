@@ -107,3 +107,49 @@ void drawSquareFilled(const int size, const char ch){
     
     cout << endl;
 }
+
+/**
+  * Display the desired rectangle dimensions (i = height, j = length). At the end add a new line. The boolean will be <code>false</code> if it wasn't called by the user, hence the shape will not be filled. If the function gets called from the random shape generator then it gets the default state of not-filled.
+  * @param height The height variable is the height of the rectangle
+  * @param length The length variable is the length of the rectangle
+  * @param ch The ch variable is the desired character that they want the shape to have
+  * @param filled The filled variable is in order for us to know if the function was called by a user or not
+ */
+void drawRectangle(const int height, const int length, const char ch, const bool filled){
+    assert(height > 0 && length > 0);
+    
+    // Temporary Variables
+    char tempAns;
+    
+    if(!filled) {
+        // Prompt user to ask them if they want the square filled or empty
+        cout << "Would you like a filled square (y/n)? ";
+        cin >> tempAns;
+        
+        // Data validation for yes and no
+        while(tempAns != 'y' && tempAns != 'n') {
+            cout << tempAns;
+            cout << "Please enter y or n: ";
+            cin >> tempAns;
+        }
+    }
+    
+    // Loop through the size. If it's the first row, draw the whole row. Any other row, draw a character add a space of
+    // length - 1 (setw starts from 1, so we remove 1 from size) and add another character
+    if(tempAns == 'y') drawRectangleFilled(height, length, ch);
+    else {
+        for(int i = 0; i < height; i++) {
+            if(i == 0 || i == height - 1) {
+                for(int j = 0; j < length; j++) {
+                    cout << ch;
+                }
+            } else {
+                cout << ch << setw(length - 1) << ch;
+            }
+            
+            cout << endl;
+        }
+    }
+    
+    cout << endl;
+}
