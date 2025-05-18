@@ -1,24 +1,19 @@
-/**
- * \file Matrix.h
- * \brief Function declarations
- * \details Function declarations
- * \author Marios Kyriacou (U244N0037)
- * \date 2025
- * \version 0.1
- * \copyright GNU Public License
+/** \file Matrix.h
+ *  \brief     A small marix library, header file
+ *  \details   The  ..
+ *  \author    Harald Gjermundrod
+ *  \version   0.1
+ *  \date      2020-2020
+ *  \pre       First initialize the system.
+ *  \bug       No bugs so far
+ *  \copyright University of Nicosia.
  */
+#pragma once
 
-#include "namespaces.h"
+// Global constant
+const int MAX_COL = 5;
 
-#ifndef MATRIX_H
-#define MATRIX_H
+bool isIdentityMatrix(const double mat[][MAX_COL], const int maxRow);
+bool makeIdentityMatrix(double mat[][MAX_COL], const int maxRow);
+double sumOfDiagonal(const double mat[][MAX_COL], const int maxRow);
 
-double sumOfRow(const double[][Globals::MAX_COL], const int, const int);
-double sumOfCol(const double[][Globals::MAX_COL], const int, const int);
-void fillWithRandomNum(double[][Globals::MAX_COL], const int);
-void printMatrix(const double [][Globals::MAX_COL], const int);
-double maximumValue(const double[][Globals::MAX_COL], const int);
-void transposedMatrix(const double[][Globals::MAX_COL], double[][Globals::MAX_COL], const int);
-double averageOfElements(const double[][Globals::MAX_COL], const int);
-
-#endif
