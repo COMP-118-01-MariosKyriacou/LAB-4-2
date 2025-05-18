@@ -83,4 +83,22 @@ void printMatrix(const double matrix[][Globals::MAX_COL], const int maxRow) {
         
         std::cout << std::endl;
     }
-}	
+}
+
+/**
+ * In this function, we find the maximum value in the matrix
+ * @param matrix A constant variable with the matrix in order to read and find the maximum number
+ * @param maxRow A constant variable of the maximum amount of rows in the array
+ * @return Returns the maximum value of the matrix
+ */
+double maximumValue(const double matrix[][Globals::MAX_COL], const int maxRow) {
+    double tempMax = matrix[0][0];
+    
+    for(int i = 0; i < maxRow; i++) {
+        for(int j = 0; j < Globals::MAX_COL; j++) {
+            if(tempMax < matrix[i][j]) tempMax = matrix[i][j];
+        }
+    }
+    
+    return tempMax;
+}
