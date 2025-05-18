@@ -171,3 +171,17 @@ void drawRectangleFilled(const int height, const int length, const char ch){
         cout << endl;
     }
 }
+
+/**
+  * This function validates the data entered by the user in order to check if the numbers they have entered are more than 0 (because shapes require a positive value)
+  * @param num1 The num1 variable is either the height or the length of the shape
+  * @param num2 The num2 variable is either the height or the length of the shape
+  * @return It will return <code>true</code> if both the numbers are >0 and <code>false</code> if either number is <0
+ */
+bool dataValidation(const int num1, const int num2) {
+    assert(num1 > 0 && num2 > 0);
+    
+    if(num1 > 0 && num2 > 0) return true;
+    
+    return false;
+}
