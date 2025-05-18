@@ -69,3 +69,18 @@ void fillWithRandomNum(double matrix[][Globals::MAX_COL], const int maxRow) {
         }
     }
 };
+
+/**
+ * In this function, we print out the matrix[][] array. After each row, we add a new line
+ * @param matrix A constant variable with the matrix in order to read and display it
+ * @param maxRow A constant variable of the maximum amount of rows in the array
+ */
+void printMatrix(const double matrix[][Globals::MAX_COL], const int maxRow) {
+    for(int i = 0; i < maxRow; i++) {
+        for(int j = 0; j < Globals::MAX_COL; j++) {
+            std::cout << matrix[i][j] << " ";
+        }
+        
+        std::cout << std::endl;
+    }
+}	
