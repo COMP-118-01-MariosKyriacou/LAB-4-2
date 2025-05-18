@@ -252,3 +252,41 @@ void initializeArrays(int shapeTy[], int shapeLen[], char shapeCh[], const int a
     
     drawArrays(shapeTy, shapeLen, shapeCh, arrSize);
 }
+
+/**
+ * In this function, we will draw the values that have been added to the variables in the <code>initializeArrays()</code> function
+ * @param shapeTy The shapeTy variable has random values from 1-6, arrSize number of times, to indicate which shape type to print
+ * @param shapeLen The shapeLen variable has random values from 1-20, arrSize number of times, to see the length of the shape
+ * @param shapeCh The shapeCh variable has random values (ASCII) from 33-126, arrSize number of times, in order to show it as the character of the shape
+ * @param arrSize The arrSize variable is a random value between 1-10 that will be the amount of values that will be generated for the arrays
+*/
+void drawArrays(const int shapeTy[], const int shapeLen[], const char shapeCh[], const int arrSize) {
+    for(int i = 0; i < arrSize; i++) {
+        switch(shapeTy[i]) {
+            case 1:
+                drawHorizontalLine(shapeLen[i], shapeCh[i]);
+                
+                break;
+            case 2:
+                drawVerticalLine(shapeLen[i], shapeCh[i]);
+                
+                break;
+            case 3:
+                drawSquareFilled(shapeLen[i], shapeCh[i]);
+                
+                break;
+            case 4:
+                drawSquare(shapeLen[i], shapeCh[i], true);
+                
+                break;
+            case 5:
+                drawRectangle(shapeLen[i] / 2, shapeLen[i], shapeCh[i], true);
+                
+                break;
+            default:
+                drawRectangleFilled(shapeLen[i] / 2, shapeLen[i], shapeCh[i]);
+                
+                break;
+        }
+    }
+}
