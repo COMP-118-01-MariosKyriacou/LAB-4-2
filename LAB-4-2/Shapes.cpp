@@ -153,3 +153,21 @@ void drawRectangle(const int height, const int length, const char ch, const bool
     
     cout << endl;
 }
+
+/**
+  * Draw a filled rectangle with the desired height and length
+  * @param height The height variable is the height of the rectangle
+  * @param length The length variable is the length of the rectangle
+  * @param ch The ch variable is the desired character that they want the shape to have
+ */
+void drawRectangleFilled(const int height, const int length, const char ch){
+    assert(height > 0 && length > 0);
+    
+    for(int i = 0; i < height; i++) {
+        for(int j = 0; j < length; j++) {
+            cout << ch;
+        }
+        
+        cout << endl;
+    }
+}
