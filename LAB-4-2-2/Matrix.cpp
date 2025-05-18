@@ -35,3 +35,24 @@ double sumOfRow(const double matrix[][Globals::MAX_COL], const int row, const in
     
     return total;
 }
+
+/**
+ * In this function, we sum up all of the items of the matrix in the column provided by the user
+ * @param matrix A constant parameter where it can't be changed with the matrix array
+ * @param column A constant variable which holds the value of the column that the user provided
+ * @param maxRow A constant variable with the maximum row number in order to loop through the rows
+ * @return If the column provided is > Globals::MAX_COL or <0 then it returns 0, otherwise it returns the total of the column
+ */
+double sumOfCol(const double matrix[][Globals::MAX_COL], const int column, const int maxRow) {
+    double total = 0;
+    
+    if(column > Globals::MAX_COL - 1 || column < 0) {
+        return 0;
+    }
+    
+    for(int i = 0; i < maxRow; i++) {
+        total += matrix[i][column];
+    }
+    
+    return total;
+}
